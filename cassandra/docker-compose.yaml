@@ -1,0 +1,4 @@
+singlenode:
+    build: .
+    ports:
+        - "9042:9042"

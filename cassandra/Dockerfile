@@ -6,4 +6,4 @@ USER root
 COPY scripts/cassandra-singlenode.sh /usr/local/bin/cassandra-singlenode
 
 # Start Cassandra
-ENTRYPOINT ["cassandra-singlenode"]
+CMD ["cassandra-singlenode"]

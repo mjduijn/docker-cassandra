@@ -12,6 +12,11 @@ RUN wget http://apache.cs.uu.nl/cassandra/$CASSANDRA_VERSION/apache-cassandra-$C
 
 ENV PATH "$CASSANDRA_HOME/bin:$PATH"
 
+#Install JNA
+ENV JNA_VERSION 4.1.0
+RUN mkdir -p $JAVA_HOME/lib \
+	&& wget -P /opt/jdk/lib/ https://github.com/twall/jna/raw/$JNA_VERSION/dist/linux-x86-64.jar
+
 COPY scripts /scripts
 RUN /scripts/config-cassandra-base.sh
 
